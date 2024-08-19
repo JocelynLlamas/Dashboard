@@ -40,35 +40,6 @@ Make sure you have the following installed:
     ```
     The app will be running at `http://localhost:4200`.
 
-### 📚 Project Structure
-
-Here's a breakdown of the project's structure to help you navigate the code:
-
-src/
-│
-├── app/
-│ ├── core/ # Core services, models, etc.
-│ │ ├── services/
-│ │ └── models/
-│ ├── shared/ # Shared components, directives, pipes
-│ │ ├── components/
-│ │ └── directives/
-│ ├── dashboard/ # Feature module for the dashboard
-│ │ ├── charts/
-│ │ ├── tables/
-│ │ ├── cards/
-│ │ └── dashboard.component.ts
-│ ├── app.component.ts
-│ ├── app.module.ts
-│ └── app-routing.module.ts
-│
-├── assets/ # Images, icons, etc.
-├── styles/ # Global SCSS files
-│ ├── _variables.scss
-│ └── styles.scss
-└── index.html
-
-
 ### 📝 Components Overview
 
 - **DashboardComponent**: The main component that includes the charts, tables, and cards.
