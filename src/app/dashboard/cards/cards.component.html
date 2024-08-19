@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-4" *ngFor="let card of cardData">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas" [ngClass]="card.icon"></i>
+                <h5 class="card-title">{{ card.title }}</h5>
+                <p class="card-text">{{ card.value }}</p>
+            </div>
+        </div>
+    </div>
+</div>
