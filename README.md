@@ -8,6 +8,8 @@ Welcome to the **Angular Dashboard** project! This is a simple and scalable dash
 - **Charts**: Interactive charts powered by `Chart.js` and `ng2-charts`.
 - **Tables**: Simple tables displaying dynamic data.
 - **Cards**: Information cards to display key metrics.
+- **User Authentication**: Includes login and registration forms with form validation and token management.
+- **Form Validation**: Ensures data integrity by validating user input in forms.
 - **Scalable Structure**: Organized folder structure for easy scalability and maintainability.
 
 ## 🛠️ Getting Started
@@ -46,6 +48,29 @@ Make sure you have the following installed:
 - **ChartsComponent**: Displays a line chart using `Chart.js`.
 - **TablesComponent**: Renders a table with sample data.
 - **CardsComponent**: Displays key metrics in card format.
+- **LoginComponent**: Handles user login with form validation.
+- **RegisterComponent**: Handles user registration with form validation, including password matching.
+
+### 🔐 User Authentication
+
+The application features a simple authentication system with:
+
+- **Login**: Users can log in using their credentials. If the credentials match the dummy data, they will receive a JWT token.
+- **Register**: New users can register by providing a username and password. The system includes validation to ensure passwords meet criteria and match.
+- **Token Management**: JWT tokens are stored in `localStorage` and are used to manage user sessions.
+
+### 🛡️ Form Validation
+
+Both the login and registration forms include form validation:
+
+- **Login Form**:
+  - **Username**: Required, minimum length of 3 characters.
+  - **Password**: Required, minimum length of 6 characters.
+
+- **Register Form**:
+  - **Username**: Required, minimum length of 3 characters.
+  - **Password**: Required, minimum length of 6 characters.
+  - **Confirm Password**: Required, must match the password field.
 
 ### 📈 Dummy Data Service
 
