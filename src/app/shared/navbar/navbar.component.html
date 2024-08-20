@@ -13,7 +13,7 @@
                 </div>
                 @if (auth.isUserAutenticated) {
                 <button mat-button style="color: var(--secondary-color);">Welcome {{username}}</button>
-                <button mat-button style="color: var(--secondary-color);" (click)="auth.logout()">Logout</button>
+                <button mat-button style="color: var(--secondary-color);" (click)="logout()">Logout</button>
                 }
                 @if (!auth.isUserAutenticated) {
                 <button mat-button routerLink="/register" style="color: var(--secondary-color);">Register</button>
