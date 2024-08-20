@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../core/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-notFound',
@@ -7,6 +9,9 @@ import { Component } from '@angular/core';
   templateUrl: './notFound.component.html',
   styleUrl: './notFound.component.scss'
 })
-export class notFoundComponent {
+export class NotFoundComponent {
 
+  constructor(public auth: AuthService, private router: Router){
+    
+  }
 }
