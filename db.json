@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "john_doe",
+      "password": "password123",
+      "token": "mock-jwt-token",
+      "openid": "mock-openid-token"
+    },
+    {
+      "id": "08ae",
+      "username": "Jocy",
+      "password": "Llamas",
+      "token": "mock-jwt-token",
+      "openid": "mock-openid-token"
+    }
+  ]
+}
