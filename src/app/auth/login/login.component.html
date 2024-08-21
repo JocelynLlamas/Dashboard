@@ -1,4 +1,12 @@
-<div class="container d-flex justify-content-center">
+@if (isLoading) {
+<div class="z-3 position-absolute p-5 rounded-3 w-100 h-100 d-flex justify-content-center align-items-center"
+    style="background-color: rgba(0, 0, 0, 0.171);">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+}
+<div class="container d-flex justify-content-center p-5">
     <div class="card w-50">
         <div class="card-body">
             <h2>Login</h2>

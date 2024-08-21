@@ -36,8 +36,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { login } from '../../core/store/auth/auth.actions';
+import { filter, tap } from 'rxjs';
+import { selectAuthError, selectAuthLoading } from '../../core/store/auth/auth.selectors';
 
 
 @Component({
@@ -53,13 +55,29 @@ import { login } from '../../core/store/auth/auth.actions';
 })
 export class LoginComponent {
   loginForm!: FormGroup;
-  errorMessage: string = '';
+  errorMessage: string | null = '';
+  isLoading: boolean = false;
 
   constructor(private fb: FormBuilder, private store: Store, private router: Router) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
+
+    // Listen to loading and error states
+    this.store.pipe(
+      select(selectAuthLoading),
+      tap(loading => this.isLoading = loading)
+    ).subscribe();
+
+    this.store.pipe(
+      select(selectAuthError),
+      filter(error => !!error),
+      tap(error => {
+        this.isLoading = false;
+        this.errorMessage = error;
+      })
+    ).subscribe();
   }
 
   get username() {
@@ -71,11 +89,13 @@ export class LoginComponent {
   }
 
   onLogin(): void {
-    console.log(1)
+
+    this.isLoading = true;
+
     if (this.loginForm.invalid) {
+      this.isLoading = false;
       return;
     }
-
     const { username, password } = this.loginForm.value;
     this.store.dispatch(login({ username, password }));
   }
