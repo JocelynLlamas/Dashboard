@@ -45,6 +45,12 @@ Make sure you have the following installed:
     ```
     The app will be running at `http://localhost:4200`.
 
+4. **Start the mock server:**:
+    ```bash
+    json-server --watch db.json 
+    ```
+    The server will be running at `http://localhost:3000`.
+
 ### 📝 Components Overview
 
 - **DashboardComponent**: The main component that includes the charts, tables, and cards. Protected by an Auth Guard to ensure only authenticated users can access it.
