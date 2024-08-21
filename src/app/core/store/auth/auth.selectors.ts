@@ -5,7 +5,7 @@ export const selectAuthState = createFeatureSelector<AuthState>('auth');
 
 export const selectIsAuthenticated = createSelector(
   selectAuthState,
-  (state: AuthState) => state.isAuthenticated
+  (state: AuthState | undefined) => state ? state.loading : false
 );
 
 export const selectUsername = createSelector(
@@ -15,10 +15,10 @@ export const selectUsername = createSelector(
 
 export const selectAuthLoading = createSelector(
   selectAuthState,
-  (state: AuthState) => state.loading
+  (state: AuthState) => state ? state.loading : false
 );
 
 export const selectAuthError = createSelector(
   selectAuthState,
-  (state: AuthState) => state.error
+  (state: AuthState | undefined) => state ? state.error : null 
 );
